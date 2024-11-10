@@ -1,0 +1,236 @@
+/* Profile Container */
+.profile-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9ecee;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #8b4513; 
+}
+
+/* Profile Image */
+.profile-image {
+    flex: 1;
+    text-align: center;
+}
+
+.profile-image img {
+    width: 350px;
+    height: 350px;
+    margin-left: 80px;
+    border-radius: 50%;
+    border: 4px solid #D8A96E;
+    object-fit: cover;
+}
+
+/* Profile Info */
+.profile-info {
+    flex: 2;
+}
+
+.profile-info h1 {
+    font-size: 50px;
+    color: #9b2c2c;
+    font-family: 'Sansita Swashed', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Container */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-left: 180px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #8b4513; /* Brown color */
+}
+
+/* Form Label */
+form label {
+    font-weight: bold;
+    margin-top: 15px;
+    color: #8b4513;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Brown color */
+}
+
+/* Form Input */
+form input[type="text"] {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #D8A96E; /* Yellow color */
+    border-radius: 4px;
+    background-color: #fff;
+    color: #555;
+    font-size: 14px;
+}
+
+form input[type="text"]::placeholder {
+    color: #bbb;
+}
+
+/* Focus effect */
+form input[type="text"]:focus {
+    border-color: #8b4513; /* Brown color */
+    outline: none;
+    box-shadow: 0 0 5px rgba(139, 69, 19, 0.3); /* Light brown shadow */
+}
+
+
+
+/* 2ndSection Appointments */
+.appointments-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.appointment-card {
+    width: 40%;
+    padding: 20px;
+    border: 2px solid #6b6b6b;
+    border-radius: 8px;
+    background-color: #ffecec;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Appointment Card Header */
+.appointment-card h1 {
+    font-size: 2em;
+    color: #8B0000; /* Dark red for headings */
+    text-align: center;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+}
+
+/* Form Group Styling */
+.form-group {
+
+    margin-bottom: 15px;
+    width: 100%; /* Ensure form groups take full width */
+}
+
+/* Form Label */
+.form-group label {
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Input Styling */
+.form-group input[type="text"] {
+    width: 90%; /* Make input fields take full width */
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e8c8c8;
+    box-sizing: border-box; /* Ensure padding doesn't overflow */
+}
+
+/* Buttons Container */
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Reschedule Button */
+.reschedule-button {
+    background-color: #D8A96E; /* Yellow color */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    flex: 1; /* Make buttons equal width */
+    text-align: center;
+}
+
+.reschedule-button:hover {
+    background-color: #c8975f;
+}
+
+/* Delete Button */
+.delete-button {
+    background-color: #8B0000; /* Dark red color */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    flex: 1; /* Make buttons equal width */
+    text-align: center;
+}
+
+.delete-button:hover {
+    background-color: #a30000;
+}
+
+
+/* /* Table css */
+
+table {
+    margin-left: 10%;
+    width: 80%;
+    border-collapse: collapse;
+    border: 2px solid #4e3508;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Ensure rounded corners apply to all content */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+th,
+td {
+    border: 1px solid #4e3508;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+th {
+    background-color: #f7a7a7;
+    color: #8b2a2a;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: #fceeee;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+tr:hover td {
+    background-color: #f9d5d5;
+    transform: scale(1.02);
+}
+
+table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+table th:last-child {
+    border-top-right-radius: 8px;
+}
+.subheading {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 3rem;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b4443c;
+    margin-bottom: 30px;
+}

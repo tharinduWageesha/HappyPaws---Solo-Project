@@ -1,0 +1,321 @@
+/* Appointments CSS */
+
+/* Appointment Section styling */
+.appointment-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #F3E7E7;
+}
+
+.appointment-section h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #b78e2a;
+    margin-bottom: 10px;
+}
+
+.appointment-section p {
+    font-size: 1.7em;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b03b3b;
+    margin-bottom: 30px;
+}
+
+/* Container for buttons */
+.appointment-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    align-items: flex-start;
+    margin-left: 10%;
+}
+
+/* Styling individual buttons */
+.appointment-button {
+    background-color: #c99090;
+    color: #3e0d0d;
+    font-weight: 500;
+    font-size: 1.1em;
+    padding: 15px 25px;
+    width: 350px;
+    border-radius: 25px 0px 0px 25px;
+    transition: transform 0.2s;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button hover effect */
+.appointment-button:hover {
+    transform: translateX(30px);
+}
+
+/* Staggered positioning effect */
+.appointment-buttons div:nth-child(2) {
+    margin-left: 290px;
+}
+
+.appointment-buttons div:nth-child(3) {
+    margin-left: 590px;
+}
+
+.appointment-buttons div:nth-child(4) {
+    margin-left: 850px;
+}
+
+
+/* ------------------ */
+
+/* Section title styling */
+.upcoming-appointments-section {
+    margin-bottom: 50px;
+}
+
+.upcoming-appointments-section h1 {
+    font-size: 3rem;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b4443c;
+    /* darker red for the main tagline */
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Container for cards */
+.appointment-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling individual appointment cards */
+.appointment-card {
+    background-color: #fbebeb;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+/* Quote styling */
+.quote {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Footer section in the card */
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* User image styling */
+.card-footer img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Details text styling */
+.details .title {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.details .description {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Add new card styling */
+.add-new-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.add-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+/* /* Table css */
+
+table {
+    margin-left: 10%;
+    width: 80%;
+    border-collapse: collapse;
+    border: 2px solid #4e3508;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Ensure rounded corners apply to all content */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+th,
+td {
+    border: 1px solid #4e3508;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+th {
+    background-color: #f7a7a7;
+    color: #8b2a2a;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: #fceeee;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+tr:hover td {
+    background-color: #f9d5d5;
+    transform: scale(1.02);
+}
+
+table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+table th:last-child {
+    border-top-right-radius: 8px;
+}
+.subheading {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 3rem;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b4443c;
+    margin-bottom: 30px;
+}
+
+/* Modal Container */
+.modal-content {
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+/* Modal Header */
+.modal-header {
+    background-color: #f4f3ac; /* Dark red background */
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 15px;
+}
+
+.modal-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.btn-close {
+    color: #ffffff;
+    opacity: 0.7;
+}
+.btn-close:hover {
+    opacity: 1;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* Form Labels */
+.form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Select and Input Fields */
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    background-color: #ffffff;
+}
+
+/* Focused Input Styling */
+.form-control:focus {
+    border-color: #8B0000;
+    box-shadow: 0px 0px 5px rgba(139, 0, 0, 0.2);
+}
+
+/* Textarea Field */
+#appointmentTitle {
+    resize: none;
+}
+
+/* Modal Footer */
+.modal-footer {
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 15px;
+}
+
+/* Buttons */
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-primary {
+    background-color: #8b6d00; /* Dark red color */
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background-color: #949b00;
+}
+
+/* Responsive Styling */
+@media (max-width: 576px) {
+    .modal-dialog {
+        margin: 10px;
+    }
+    .modal-content {
+        border-radius: 8px;
+    }
+    .modal-header, .modal-footer {
+        padding: 10px;
+    }
+}
+

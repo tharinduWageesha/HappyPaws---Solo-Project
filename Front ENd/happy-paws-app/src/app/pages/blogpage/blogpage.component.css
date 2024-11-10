@@ -1,0 +1,933 @@
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff7f7;
+    /* light pink background */
+}
+
+.welcome-section h2 {
+    font-size: 2.5rem;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b28b10;
+    /* yellowish brown for the welcome text */
+    margin-bottom: 10px;
+}
+
+.welcome-section .subheading {
+    font-size: 3rem;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b4443c;
+    /* darker red for the main tagline */
+    margin-bottom: 30px;
+}
+
+.paws-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.paw-item {
+    text-align: center;
+}
+
+.paw-item1 img {
+    margin-top: -30px;
+    width: 80%;
+}
+
+.paw-item2 img {
+    width: 80%;
+    margin-top: 50px;
+}
+
+
+/* Shop Section */
+.shop-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #F3E7E7;
+}
+
+.shop-section .subheading {
+    font-size: 3rem;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b4443c;
+    margin-bottom: 30px;
+}
+
+/* Art section */
+.art-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff7f7;
+}
+
+.art-section .subheading {
+    font-size: 3rem;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b4443c;
+    margin-bottom: 30px;
+}
+
+/* ----------------------------------------------Item Cards------------------------------------------ */
+.container {
+    margin-top: 25px;
+    margin-left: 100px;
+    margin-bottom: 55px;
+    display: flex;
+    gap: 20px;
+}
+
+.item-card {
+    border: 3px solid #7e723c;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.product-title {
+    margin: 15px 0;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #9C6A07;
+    text-align: center;
+}
+
+.product-price {
+    font-size: 15px;
+    margin-top: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+.add-to-cart-btn {
+    background-color: #B2700C;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.25s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #e69f35;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+/* General Navbar Styling */
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo and Tagline */
+.topnav .logo {
+    height: 80px;
+    width: 100px;
+}
+
+.topnav .tagline {
+    font-size: 27px;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #A52A2A;
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #A52A2A;
+    font-family: 'Sansita Swashed', sans-serif;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Log Out Button */
+#logBtn {
+    background-color: #B2700C;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 0px solid #B2700C;
+}
+
+/* Hover Effects */
+.nav-links a:hover {
+    color: black;
+    background-color: #f0f0f0;
+}
+
+.nav-links a.active {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+/* Mobile Responsive Styling */
+@media (max-width: 768px) {
+    .topnav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Adjust logo and tagline for mobile view */
+    .topnav .logo {
+        height: 60px;
+        width: 80px;
+    }
+
+    .topnav .tagline {
+        font-size: 20px;
+        margin-left: 0;
+        text-align: center;
+        margin-top: 5px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    /* Hide navigation links initially on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Display navigation links when they are active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px 20px;
+        font-size: 18px;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Toggle Button for Mobile */
+    .topnav .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #A52A2A;
+    }
+}
+
+/* Optional toggle button styling */
+.menu-toggle {
+    display: none;
+}
+
+
+/* carousel */
+
+
+
+
+/* Footer styles */
+.site-footer {
+    background-color: #f3f3f3;
+    padding: 5px 0 2px;
+    font-size: 15px;
+    line-height: 25px;
+    color: #000000;
+    margin-top: 130px;
+    /* Ensures footer is pushed to the bottom */
+}
+
+.site-footerReports {
+    background-color: #eed3d3;
+    padding: 5px 0 2px;
+    font-size: 15px;
+    line-height: 25px;
+    color: #000000;
+    margin-top: 210px;
+    /* Ensures footer is pushed to the bottom */
+}
+
+.site-footerlast {
+    background-color: #f3a531;
+    padding: 5px 0 2px;
+    font-size: 15px;
+    line-height: 25px;
+    color: #000000;
+    margin-top: 20px;
+    /* Ensures footer is pushed to the bottom */
+}
+
+.site-footer hr {
+    border-top-color: #000000;
+    opacity: 0.5;
+}
+
+.site-footer hr.small {
+    margin: 20px 0;
+}
+
+.site-footer h6 {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+.site-footer a {
+    color: #000000;
+}
+
+.site-footer a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-links {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-links li {
+    display: block;
+}
+
+.footer-links a {
+    color: #737373;
+}
+
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.footer-links.inline li {
+    display: inline-block;
+}
+
+.site-footer .social-icons {
+    text-align: right;
+}
+
+.site-footer .social-icons a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 6px;
+    margin-right: 0;
+    border-radius: 100%;
+    background-color: #ffffff;
+}
+
+
+
+/* Pet Page---------------------------------------------------------------- */
+
+.profile-container {
+    display: flex;
+    background-color: #f9ecee;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image img {
+    width: 400px;
+    height: 400px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 30px;
+    margin-left: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.profile-info {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-info h1 {
+    font-size: 50px;
+    color: #9b2c2c;
+    font-family: 'Sansita Swashed', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form label {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.save-button {
+    background-color: #a85d0e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.delete-button {
+    background-color: #c14a4a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.save-button:hover {
+    background-color: #8e4c0c;
+}
+
+.delete-button:hover {
+    background-color: #a63b3b;
+}
+
+/* Appointmenrs */
+
+.appointments-container {
+    display: flex;
+    gap: 200px;
+    padding: 20px;
+}
+
+.appointment-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.appointment-card h1 {
+    font-size: 24px;
+    color: #9b2c2c;
+    font-family: 'Times New Roman', serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+form label {
+    font-size: 16px;
+    color: #333;
+    width: 100px;
+    text-align: left;
+}
+
+form input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.reschedule-button {
+    background-color: #a85d0e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.delete-button {
+    background-color: #c14a4a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.reschedule-button:hover {
+    background-color: #8e4c0c;
+}
+
+.delete-button:hover {
+    background-color: #a63b3b;
+}
+
+/* Table css */
+
+table {
+    margin-left: 10%;
+    width: 80%;
+    border-collapse: collapse;
+    border: 2px solid #4e3508;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Ensure rounded corners apply to all content */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+th,
+td {
+    border: 1px solid #4e3508;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+th {
+    background-color: #f7a7a7;
+    color: #8b2a2a;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: #fceeee;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+tr:hover td {
+    background-color: #f9d5d5;
+    transform: scale(1.02);
+}
+
+table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+table th:last-child {
+    border-top-right-radius: 8px;
+}
+
+
+/* Appointments CSS */
+
+/* Appointment Section styling */
+.appointment-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #F3E7E7;
+}
+
+.appointment-section h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #b78e2a;
+    margin-bottom: 10px;
+}
+
+.appointment-section p {
+    font-size: 1.7em;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b03b3b;
+    margin-bottom: 30px;
+}
+
+/* Container for buttons */
+.appointment-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    align-items: flex-start;
+    margin-left: 10%;
+}
+
+/* Styling individual buttons */
+.appointment-button {
+    background-color: #c99090;
+    color: #3e0d0d;
+    font-weight: 500;
+    font-size: 1.1em;
+    padding: 15px 25px;
+    width: 350px;
+    border-radius: 25px 0px 0px 25px;
+    transition: transform 0.2s;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button hover effect */
+.appointment-button:hover {
+    transform: translateX(30px);
+}
+
+/* Staggered positioning effect */
+.appointment-buttons div:nth-child(2) {
+    margin-left: 290px;
+}
+
+.appointment-buttons div:nth-child(3) {
+    margin-left: 590px;
+}
+
+.appointment-buttons div:nth-child(4) {
+    margin-left: 850px;
+}
+
+
+/* ------------------ */
+
+/* Section title styling */
+.upcoming-appointments-section {
+    margin-bottom: 50px;
+}
+
+.upcoming-appointments-section h1 {
+    font-size: 3rem;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b4443c;
+    /* darker red for the main tagline */
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Container for cards */
+.appointment-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling individual appointment cards */
+.appointment-card {
+    background-color: #fbebeb;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+/* Quote styling */
+.quote {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Footer section in the card */
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* User image styling */
+.card-footer img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Details text styling */
+.details .title {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.details .description {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Add new card styling */
+.add-new-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.add-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+
+/* Shop Page---------------------------------------------------------------- */
+
+/* Shop section styling */
+.shop-section {
+    text-align: center;
+}
+
+.shop-section h2 {
+    font-size: 2.5em;
+    color: #a27d0b;
+    margin-bottom: 8px;
+    font-family: 'Georgia', serif;
+}
+
+.shop-section .subtext {
+    color: #b03b3b;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-family: 'Sansita Swashed', sans-serif;
+}
+
+/* Search bar styling */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e9d0c9;
+    /* Soft brown/gray */
+    border: 1px solid #000000;
+    border-radius: 30px;
+    padding: 10px 20px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    font-size: 1em;
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding: 0 10px;
+}
+
+.search-bar:hover {
+    background-color: #ceb5b1;
+    /* Darker shade of the original color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow on hover */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Click animation */
+.search-bar:active {
+    transform: scale(1.05);
+    /* Slightly enlarges the search bar */
+    background-color: #c59a92;
+    /* Darkens the background color when clicked */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow on click */
+}
+
+.search-bar:focus-within {
+    width: 400px; /* Expands when clicked */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on click */
+  }
+
+.menu-icon,
+.search-icon {
+    color: #6a6a6a;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+
+/* Blog Page------------------------------------------------------- */
+.knowledge-section {
+    text-align: center;
+    background-color: #f5e6e0; /* Light pink background */
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.knowledge-title {
+    font-size: 2.5em;
+    color: #b8860b; /* Gold color */
+    margin: 0;
+}
+
+.knowledge-subtitle {
+    font-size: 1.4em;
+    color: #8b0000; /* Dark red color */
+    margin-top: 8px;
+    font-family:  'Sansita Swashed', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Image container */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 85px;
+}
+
+/* Individual image cards */
+.image-card {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+/* Hover effect on image */
+.image-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.image-card:hover img {
+    transform: scale(1.1); /* Zoom-in effect on image */
+}
+
+/* Main section styling */
+.content-section {
+    font-family: Arial, sans-serif;
+    
+}
+
+.section {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2em;
+    color: #8b0000; /* Dark red */
+    margin-bottom: 35px;
+    font-family:  'Sansita Swashed', sans-serif;
+}
+
+/* Card container layout */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+/* Individual card styling */
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 320px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.quote {
+    font-style: italic;
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.card-title {
+    font-weight: bold;
+    color: #555;
+}
+
+.card-description {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Background color for alternate sections */
+.section:nth-child(even) {
+    background-color: #f9ecec; /* Light pink background */
+    padding: 20px 0;
+}

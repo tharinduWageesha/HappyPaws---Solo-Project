@@ -1,0 +1,156 @@
+<div class="profile-container">
+    <div class="profile-image">
+        <img src="bruno.jpeg" alt="Bruno's Profile Picture">
+    </div>
+    <div class="profile-info">
+        <h1>Here {{Pet.name}}'s Profile</h1>
+        <form>
+            <label>Birth Day</label>
+            <input type="text" placeholder="Value" [disabled]="true" [value]="Pet.birthday">
+
+            <label>Breed</label>
+            <input type="text" placeholder="Value" [disabled]="true" [value]="Pet.breed">
+
+            <label>Gender</label>
+            <input type="text" placeholder="Value" [disabled]="true" [value]="Pet.gender">
+
+            <label>Owner</label>
+            <input type="text" placeholder="Value" [value]="Pet.owner" [disabled]="true">
+
+        </form>
+    </div>
+</div>
+
+
+
+<div class="appointments-container">
+    <!-- Upcoming Appointments -->
+    <div class="appointment-card">
+        <h1>Upcoming Appointment</h1>
+        <form>
+            <div class="form-group">
+                <label>Date</label>
+                <input type="text" placeholder="Value" set>
+            </div>
+            <div class="form-group">
+                <label>Vet’s Name</label>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="form-group">
+                <label>Time</label>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="form-group">
+                <label>Type</label>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="buttons">
+                <button type="submit" class="reschedule-button">Reschedule</button>
+                <button type="button" class="delete-button">Delete</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Recent Appointments -->
+    <div class="appointment-card">
+        <h1>Last Appointment</h1>
+        <form>
+            <div class="form-group">
+                <label>Date</label>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="form-group">
+                <label>Vet’s Name</label>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="form-group">
+                <label>Time</label>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="form-group">
+                <label>Type</label>
+                <input type="text" placeholder="Value">
+            </div>
+            <div class="buttons">
+                <button type="submit" class="reschedule-button">Reschedule</button>
+                <button type="button" class="delete-button">Delete</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- tables -->
+<div class="row3">
+
+    <!-- Health Records -->
+    <section>
+        <p class="subheading">Health Records</p>
+
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Veterinary</th>
+            </tr>
+            <tr>
+                <td>Parvo Vaccination</td>
+                <td>2024.12.06</td>
+                <td>Dr Prathiba Thilakarathna</td>
+            </tr>
+            <tr>
+                <td>Parvo Vaccination</td>
+                <td>2024.12.06</td>
+                <td>Dr Prathiba Thilakarathna</td>
+            </tr>
+            <tr>
+                <td>Parvo Vaccination</td>
+                <td>2024.12.06</td>
+                <td>Dr Prathiba Thilakarathna</td>
+            </tr>
+            <tr>
+                <td>Parvo Vaccination</td>
+                <td>2024.12.06</td>
+                <td>Dr Prathiba Thilakarathna</td>
+            </tr>
+        </table>
+
+    </section>
+
+</div>
+
+<div class="row3">
+
+    <!-- Vaccinations -->
+    <section style="margin-bottom: 40px;">
+        <p class="subheading">Vaccinations</p>
+
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Veterinary</th>
+            </tr>
+            <tr>
+                <td>Parvo Vaccination</td>
+                <td>2024.12.06</td>
+                <td>Dr Prathiba Thilakarathna</td>
+            </tr>
+            <tr>
+                <td>Parvo Vaccination</td>
+                <td>2024.12.06</td>
+                <td>Dr Prathiba Thilakarathna</td>
+            </tr>
+            <tr>
+                <td>Parvo Vaccination</td>
+                <td>2024.12.06</td>
+                <td>Dr Prathiba Thilakarathna</td>
+            </tr>
+            <tr>
+                <td>Parvo Vaccination</td>
+                <td>2024.12.06</td>
+                <td>Dr Prathiba Thilakarathna</td>
+            </tr>
+        </table>
+
+    </section>

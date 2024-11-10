@@ -1,0 +1,113 @@
+/* General Navbar Styling */
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo and Tagline */
+.topnav .logo {
+    height: 80px;
+    width: 100px;
+}
+
+.topnav .tagline {
+    font-size: 27px;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #A52A2A;
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #A52A2A;
+    font-family: 'Sansita Swashed', sans-serif;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Log Out Button */
+#logBtn {
+    background-color: #B2700C;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 0px solid #B2700C;
+}
+
+/* Hover Effects */
+.nav-links a:hover {
+    color: black;
+    background-color: #f0f0f0;
+}
+
+.nav-links a.active {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+/* Mobile Responsive Styling */
+@media (max-width: 768px) {
+    .topnav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Adjust logo and tagline for mobile view */
+    .topnav .logo {
+        height: 60px;
+        width: 80px;
+    }
+
+    .topnav .tagline {
+        font-size: 20px;
+        margin-left: 0;
+        text-align: center;
+        margin-top: 5px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    /* Hide navigation links initially on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Display navigation links when they are active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px 20px;
+        font-size: 18px;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Toggle Button for Mobile */
+    .topnav .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #A52A2A;
+    }
+}
+
+/* Optional toggle button styling */
+.menu-toggle {
+    display: none;
+}

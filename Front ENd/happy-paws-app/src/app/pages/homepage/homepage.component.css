@@ -1,0 +1,327 @@
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #F3E7E7;
+    /* light pink background */
+}
+
+.welcome-section h2 {
+    font-size: 2.5rem;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b28b10;
+    /* yellowish brown for the welcome text */
+    margin-bottom: 10px;
+}
+
+.welcome-section .subheading {
+    font-size: 3rem;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b4443c;
+    /* darker red for the main tagline */
+    margin-bottom: 30px;
+}
+
+.paws-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.paw-item {
+    text-align: center;
+}
+
+.paw-item1 img {
+    margin-top: -30px;
+    width: 80%;
+}
+
+.paw-item2 img {
+    width: 80%;
+    margin-top: 50px;
+}
+
+.carousel-item{
+    color: #333;
+}
+/* Shop Section Styling */
+.shop-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff7f7;
+}
+.morebtn{
+    background-color: #ffffff;
+    color: #b4443c;
+    border: 2px solid #b4443c;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    margin-left: 45%;
+    margin-bottom: 30px;
+}
+.morebtn:hover {
+    background-color: #b4443c;
+    color: #ffffff;
+}	
+.morebtn2{
+    background-color: #ffffff;
+    color: #b4443c;
+    border: 2px solid #b4443c;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.morebtn2:hover {
+    background-color: #b4443c;
+    color: #ffffff;
+}	
+
+.subheading {
+    font-size: 3rem;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b4443c;
+    margin-bottom: 30px;
+}
+
+/* Responsive container grid */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.shop-bar {
+    align-items: center;
+    width:90%;
+    margin-left: 80px;
+    margin-bottom: 10px;
+}
+.shop-bar h2 {
+    font-size: 3rem;
+    font-family: 'Sansita Swashed', sans-serif;
+    margin-bottom: 30px;
+    color: #b4443c;
+    text-align: center;
+    margin-top: 50px;
+}
+.product-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+}
+.product {
+    flex: 0 0 auto;
+    width: 250px;
+    text-align: center;
+    animation: scroll 15s linear infinite;
+}
+.product img {
+    width: 100%;
+    border-radius: 50%;
+    border: 4px solid #D8A96E;
+    height: 250px;
+}
+.product img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.product p {
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* /* Card Styling */
+.card {
+    border: 1px solid rgb(118, 118, 118);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 20px;
+    background-color: #f7f0f0;
+    text-align: center;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+/* Button Styling */
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    border-color: #B2700C;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #B2700C;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #e6aa51;
+}
+
+/* Art section */
+.art-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+.art-section .subheading {
+    font-size: 3rem;
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #b4443c;
+    margin-bottom: 30px;
+}
+/* article modal */
+/* Modal Header */
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+/* Modal Image Styling */
+.modal-body img {
+    max-width: 100%;  /* Ensure image is responsive */
+    height: auto;
+}
+
+/* Modal Body */
+.article-body p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Author Info */
+.author-info p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Modal Footer Styling */
+.modal-footer {
+    border-top: 1px solid #ddd;
+}
+
+/* Button Styling */
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+}
+
+.article-body p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.img-fluid {
+    max-height: 400px; /* Limit the height of the image */
+    object-fit: cover; /* Ensure the image fills its container without distorting */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Author Info */
+.author-info {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 20px;
+}
+
+.author-info p {
+    font-weight: 600;
+}
+
+.modal-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* Button Styles */
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-close {
+    color: #000;
+    font-size: 1.2rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .modal-content {
+        border-radius: 0;
+    }
+}

@@ -1,0 +1,127 @@
+<div class="shop-section">
+    <img src="Feed-5-Dogs-VIP-Wide-Desktop-.webp" style="margin-bottom: 30px; max-width: 100%;">
+
+    <!-- Food -->
+    <div class="Category">
+        <h1 class="CatTitle"
+            style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; color: #b4443c;"><b>Pet
+                Foods</b></h1>
+    </div>
+    <div class="container">
+        <div class="item-card" *ngFor="let item of foodlist">
+            <img src="{{item.product_picture}}" alt="itemImg" style="width:100%; max-height: 400px;">
+            <div class="product-title">{{item.productName}}</div>
+            <div class="product-price">LKR {{item.price}}/-</div>
+            <select class="quantity-select">
+                <option value="1">Qty - 1</option>
+                <option value="2">Qty - 2</option>
+                <option value="3">Qty - 3</option>
+                <option value="4">Qty - 4</option>
+                <option value="5">Qty - 5</option>
+            </select>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+    </div>
+
+
+    <!-- Toys -->
+    <div class="Category">
+        <h1 class="CatTitle"
+            style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; color: #b4443c; margin-top: 40px;">
+            <b>Toys</b></h1>
+    </div>
+    <div class="container">
+        <div class="item-card" *ngFor="let item of toylist">
+            <img src="{{item.product_picture}}" alt="itemImg" style="width:100%;">
+            <div class="product-title">{{item.productName}}</div>
+            <div class="product-price">LKR {{item.price}}/-</div>
+            <select class="quantity-select">
+                <option value="1">Qty - 1</option>
+                <option value="2">Qty - 2</option>
+                <option value="3">Qty - 3</option>
+                <option value="4">Qty - 4</option>
+                <option value="5">Qty - 5</option>
+            </select>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+    </div>
+
+
+    <!-- Shampoo -->
+    <div class="Category">
+        <h1 class="CatTitle"
+            style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; color: #b4443c; margin-top: 40px;">
+            <b>Shampoos & Conditioners</b></h1>
+    </div>
+    <div class="container">
+        <div class="item-card" *ngFor="let item of shampoolist">
+            <img src="{{item.product_picture}}" alt="itemImg" style="width:100%;">
+            <div class="product-title">{{item.productName}}</div>
+            <div class="product-price">LKR {{item.price}}/-</div>
+            <select class="quantity-select">
+                <option value="1">Qty - 1</option>
+                <option value="2">Qty - 2</option>
+                <option value="3">Qty - 3</option>
+                <option value="4">Qty - 4</option>
+                <option value="5">Qty - 5</option>
+            </select>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="shop-section">
+    <img src="Shop-Human-Wide-Desktop.webp" style="margin-bottom: 30px; max-width: 100%;">
+    <!-- Food -->
+    <div class="Category">
+        <h1 class="CatTitle"
+            style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; color: #b4443c;"><b>Pet
+                Accesories</b></h1>
+    </div>
+    <div class="container">
+        <div class="item-card" *ngFor="let item of accessorylist">
+            <img src="{{item.product_picture}}" alt="itemImg" style="width:100%;">
+            <div class="product-title">{{item.productName}}</div>
+            <div class="product-price">LKR {{item.price}}/-</div>
+            <select class="quantity-select">
+                <option value="1">Qty - 1</option>
+                <option value="2">Qty - 2</option>
+                <option value="3">Qty - 3</option>
+                <option value="4">Qty - 4</option>
+                <option value="5">Qty - 5</option>
+            </select>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+    </div>
+
+
+    <!-- Other -->
+    <div class="Category">
+        <h1 class="CatTitle"
+            style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; color: #b4443c; margin-top: 40px;">
+            <b>Others</b></h1>
+    </div>
+    <div class="container">
+        <div class="item-card" *ngFor="let item of otherlist">
+            <img src="{{item.product_picture}}" alt="itemImg" style="width:100%;">
+            <div class="product-title">{{item.productName}}</div>
+            <div class="product-price">LKR {{item.price}}/-</div>
+            <select class="quantity-select">
+                <option value="1">Qty - 1</option>
+                <option value="2">Qty - 2</option>
+                <option value="3">Qty - 3</option>
+                <option value="4">Qty - 4</option>
+                <option value="5">Qty - 5</option>
+            </select>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+
+    </div>
+
+</div>

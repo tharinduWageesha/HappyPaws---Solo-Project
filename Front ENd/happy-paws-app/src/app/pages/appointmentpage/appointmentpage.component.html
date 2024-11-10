@@ -1,0 +1,124 @@
+<div class="appointment-section">
+    <h1>Manage your Appointments</h1>
+    <p>View upcoming appointments, schedule new visits, or reschedule/cancel existing ones.</p>
+
+    <div class="appointment-buttons">
+        <div class="appointment-button">✔ Schedule Appointment</div>
+        <div class="appointment-button">✔ View Past Appointments</div>
+        <div class="appointment-button">✔ View Upcoming Appointments</div>
+        <div class="appointment-button">✔ Choose Your Veterinarian</div>
+    </div>
+</div>
+
+<div class="upcoming-appointments-section">
+    <h1>Upcoming Appointments</h1>
+
+    <div class="appointment-cards">
+        <div class="appointment-card" *ngFor="let appointment of upcomingAppointments">
+            <p class="quote">{{ appointment.type }}</p>
+            <div class="card-footer">
+                <img src="appointmentClipArt.png" alt="User Image">
+                <div class="details">
+                    <p class="title">{{ appointment.date }}</p>
+                    <p class="title">{{ appointment.time }}</p>
+                    <p class="description">{{ appointment.veterinarian }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="appointment-card add-new-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <span class="add-icon">+</span>
+            <p class="add-text">Add New</p>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel" style="text-align: center;">Add New Appointment</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- New Appointment Form -->
+                        <form id="newAppointmentForm">
+                            <!-- Name Field -->
+                            <div class="mb-3">
+                                <label for="appointmentVet" class="form-label">Veterinarian</label>
+                                <select class="form-control" id="appointmentVet" name="vet" [(ngModel)]="appointment.veterinarian">
+                                    <option value="" disabled selected>Select Veterinarian</option>
+                                    <option value="Dr. Prathiba Samarakoon">Dr. Prathiba Samarakoon</option>
+                                    <option value="Dr. Thusith Chathuranga">Dr. Thusith Chathuranga</option>
+                                    <option value="Dr. Imandi Abeysinghe">Dr. Imandi Abeysinghe</option>
+                                    <option value="Dr. Gimantha Ekanayaka">Dr. Gimantha Ekanayaka </option>
+                                </select>
+                            </div>
+
+                            <!-- Date Field -->
+                            <div class="mb-3">
+                                <label for="appointmentDate" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="appointmentDate" name="date" [(ngModel)]="appointment.date">
+                            </div>
+
+                            <!-- Time Field -->
+                            <div class="mb-3">
+                                <label for="appointmentTime" class="form-label">Time</label>
+                                <input type="time" class="form-control" id="appointmentTime" name="time" [(ngModel)]="appointment.time">
+                            </div>
+
+                            <!-- Type Field -->
+                            <div class="mb-3">
+                                <label for="appointmentType" class="form-label">Type</label>
+                                <select class="form-control" id="appointmentType" name="vet" [(ngModel)]="appointment.type">
+                                    <option value="" disabled selected>Select type of the appointment</option>
+                                    <option value="Routine Check-Up">Routine Check-Up</option>
+                                    <option value="Vaccination Appointment">Vaccination Appointment</option>
+                                    <option value="Sick Visit">Sick Visit</option>
+                                    <option value="Surgical Appointment">Surgical Appointment</option>
+                                    <option value="Emergency Visit">Emergency Visit</option>
+                                    <option value="Dental Cleaning and Care">Dental Cleaning and Care</option>
+                                    <option value="Grooming Appointment">Grooming Appointment</option>
+                                    <option value="Behavioral Consultation">Behavioral Consultation</option>
+                                    <option value="Follow-Up Visit">Follow-Up Visit</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="appointmentOwner" class="form-label">Your Name</label>
+                                <textarea class="form-control" id="appointmentUser" rows="1" [(ngModel)]="appointment.type"></textarea>
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" form="newAppointmentForm" class="btn btn-primary" (click)="addAppointment()">Save Appointment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+  
+
+
+<section style="margin-bottom: 40px; background-color: #ffe6e6">
+    <p class="subheading">Past Appointments</p>
+    <table style="margin-bottom: 30px;">
+        <tr>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Veterinary</th>
+        </tr>
+        <tr *ngFor="let appointment of pastAppointments">
+            <td>{{ appointment.type }}</td>
+            <td>{{ appointment.date }}</td>
+            <td>{{ appointment.time }}</td>
+            <td>{{ appointment.veterinarian }}</td>
+        </tr>
+    </table>
+
+</section>
