@@ -35,9 +35,9 @@ public class UserController {
         service.addUser(user);
     }
 
-    @GetMapping("/search-by-name/{name}")
+    @GetMapping("/search-by-email/{email}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public User getUserByName(@PathVariable String name){
-        return service.getUserByName(name);
+    public User getUserByEmail(@PathVariable String email){
+        return service.getUserByEmail(email);
     }
 }

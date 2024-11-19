@@ -11,7 +11,6 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @ToString
 public class User {
-    private Integer username;
     private String email;
     private String name;
     private String password;
@@ -19,5 +18,10 @@ public class User {
     private LocalDate birthday;
     private String breed;
     private String pet_picture;
-    private String userType;
+    private String gender;
+    public String address;
+    public Double weight;
+    public Double height;
+    public String alergies;
+
 }

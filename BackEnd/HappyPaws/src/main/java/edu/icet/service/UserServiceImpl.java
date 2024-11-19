@@ -41,8 +41,8 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User getUserByName(String name) {
-        UserEntity userEntity = repository.findByName(name);
+    public User getUserByEmail(String email) {
+        UserEntity userEntity = repository.findByEmail(email);
         if (userEntity == null) {
             return null; // Or handle it by throwing an exception
         }

@@ -16,14 +16,16 @@ import java.time.LocalDate;
 @Table(name = "User")
 public class UserEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer username;
     private String email;
     private String name;
     private String password;
     private String petName;
     private LocalDate birthday;
     private String breed;
-    private String petPicture;
-    private String userType;
+    private String pet_picture;
+    private String gender;
+    public String address;
+    public Double weight;
+    public Double height;
+    public String alergies;
 }

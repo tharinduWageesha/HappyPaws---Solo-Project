@@ -18,5 +18,5 @@ public class Appointment {
     private String veterinarian;
     private LocalDate date;
     private LocalTime time;
-    private String ownerName;
+    private String email;
 }

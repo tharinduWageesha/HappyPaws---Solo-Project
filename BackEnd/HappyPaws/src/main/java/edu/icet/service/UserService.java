@@ -8,5 +8,5 @@ public interface UserService {
     List<User> getAll();
     void addUser(User user);
     void updateUser(User user);
-    User getUserByName(String username);
+    User getUserByEmail(String email);
 }

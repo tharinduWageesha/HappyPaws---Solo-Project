@@ -1,11 +1,8 @@
 package edu.icet.service;
 
-import edu.icet.dto.Appointment;
 import edu.icet.dto.Order;
 import edu.icet.entity.OrderEntity;
-import edu.icet.entity.UserEntity;
 import edu.icet.repository.OrderRepository;
-import edu.icet.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

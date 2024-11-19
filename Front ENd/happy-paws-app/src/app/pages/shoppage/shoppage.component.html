@@ -1,5 +1,85 @@
 <div class="shop-section">
+    <nav class="nav-links">
+        <div class="addtocartbtnsection">
+            <a href="javascript:void(0)" id="addcart" data-bs-toggle="modal" data-bs-target="#cartModal">
+                <i style="font-size:39px" class="fa">&#xf07a;</i>
+            </a>
+        </div>
+    </nav>
+
     <img src="Feed-5-Dogs-VIP-Wide-Desktop-.webp" style="margin-bottom: 30px; max-width: 100%;">
+
+    <!-- Add to Cart Modal -->
+    <div class="modal fade" id="cartModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="margin-left: 40%;">Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Cart Items Section -->
+                    <div class="cart-items">
+                        <h6>Your Cart</h6>
+                        <ul class="cart-list">
+                            <li class="cart-item" *ngFor="let item of carrtlist">
+                                <div class="item-details">
+                                    <p>{{ item.productName }}</p>
+                                    <p class="item-price">LKR {{ item.price }}</p>
+
+                                </div>
+                                <img src="{{ item.product_picture }}" alt="Item Image" height="70" width="100">
+                                <div class="item-quantity">
+                                    <input type="number" min="1" class="quantity-input" [value]="item.quantity"
+                                        disabled>
+                                </div>
+                                <button class="btn btn-danger btn-sm remove-btn"
+                                    (click)="removeFromCart(item)">Remove</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Total Price -->
+                    <div class="cart-total">
+                        <h6>Subotal: <span id="cartTotal">LKR {{ subTotal }}</span></h6>
+                        <h6>Delivery Charge: <span id="cartTotal">LKR {{ deliveryCharge }}</span></h6>
+                        <h5>Total: <span id="cartTotal">LKR {{ total }}</span></h5>
+                    </div>
+
+                    <!-- Place Order Section -->
+                    <div class="place-order">
+                        <h6>Place Your Order</h6>
+                        <form>
+                            <div class="form-group">
+                                <label for="customerName">Name</label>
+                                <input type="text" id="customerName" class="form-control" placeholder="Enter your name"
+                                    required [value]="userData.name" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerEmail">Email</label>
+                                <input type="email" id="customerEmail" class="form-control"
+                                    placeholder="Enter your email" [value]="userData.email" disabled required>
+                            </div>
+                            <div class="form-group">
+                                <label for="deliveryAddress">Address</label>
+                                <textarea id="deliveryAddress" class="form-control" placeholder="Enter shipping address"
+                                    rows="3" required [value]="userData.address"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 mt-3" (click)="placeOrder()">Place
+                                Order</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Message -->
+    <div *ngIf="showPopup" class="popup">
+        <p><span>&#10003;</span> Item added to the cart!</p>
+    </div>
+
 
     <!-- Food -->
     <div class="Category">
@@ -12,38 +92,35 @@
             <img src="{{item.product_picture}}" alt="itemImg" style="width:100%; max-height: 400px;">
             <div class="product-title">{{item.productName}}</div>
             <div class="product-price">LKR {{item.price}}/-</div>
-            <select class="quantity-select">
-                <option value="1">Qty - 1</option>
-                <option value="2">Qty - 2</option>
-                <option value="3">Qty - 3</option>
-                <option value="4">Qty - 4</option>
-                <option value="5">Qty - 5</option>
+            <select class="quantity-select" id="quantitySelect" #quantityDropdown>
+                <option *ngFor="let qty of [1, 2, 3, 4, 5, 6, 7]" [value]="qty" [selected]="qty === 1">
+                    {{qty}}
+                </option>
             </select>
-            <button class="add-to-cart-btn">Add to Cart</button>
+            <button class="add-to-cart-btn" (click)="addToCart(item, parseInt(quantityDropdown.value))">Add to
+                Cart</button>
         </div>
-
     </div>
-
 
     <!-- Toys -->
     <div class="Category">
         <h1 class="CatTitle"
             style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; color: #b4443c; margin-top: 40px;">
-            <b>Toys</b></h1>
+            <b>Toys</b>
+        </h1>
     </div>
     <div class="container">
         <div class="item-card" *ngFor="let item of toylist">
             <img src="{{item.product_picture}}" alt="itemImg" style="width:100%;">
             <div class="product-title">{{item.productName}}</div>
             <div class="product-price">LKR {{item.price}}/-</div>
-            <select class="quantity-select">
-                <option value="1">Qty - 1</option>
-                <option value="2">Qty - 2</option>
-                <option value="3">Qty - 3</option>
-                <option value="4">Qty - 4</option>
-                <option value="5">Qty - 5</option>
+            <select class="quantity-select" id="quantitySelect" #quantityDropdown>
+                <option *ngFor="let qty of [1, 2, 3, 4, 5, 6, 7]" [value]="qty" [selected]="qty === 1">
+                    {{qty}}
+                </option>
             </select>
-            <button class="add-to-cart-btn">Add to Cart</button>
+            <button class="add-to-cart-btn" (click)="addToCart(item, parseInt(quantityDropdown.value))">Add to
+                Cart</button>
         </div>
 
     </div>
@@ -53,21 +130,21 @@
     <div class="Category">
         <h1 class="CatTitle"
             style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; color: #b4443c; margin-top: 40px;">
-            <b>Shampoos & Conditioners</b></h1>
+            <b>Shampoos & Conditioners</b>
+        </h1>
     </div>
     <div class="container">
         <div class="item-card" *ngFor="let item of shampoolist">
             <img src="{{item.product_picture}}" alt="itemImg" style="width:100%;">
             <div class="product-title">{{item.productName}}</div>
             <div class="product-price">LKR {{item.price}}/-</div>
-            <select class="quantity-select">
-                <option value="1">Qty - 1</option>
-                <option value="2">Qty - 2</option>
-                <option value="3">Qty - 3</option>
-                <option value="4">Qty - 4</option>
-                <option value="5">Qty - 5</option>
+            <select class="quantity-select" id="quantitySelect" #quantityDropdown>
+                <option *ngFor="let qty of [1, 2, 3, 4, 5, 6, 7]" [value]="qty" [selected]="qty === 1">
+                    {{qty}}
+                </option>
             </select>
-            <button class="add-to-cart-btn">Add to Cart</button>
+            <button class="add-to-cart-btn" (click)="addToCart(item, parseInt(quantityDropdown.value))">Add to
+                Cart</button>
         </div>
 
     </div>
@@ -88,14 +165,13 @@
             <img src="{{item.product_picture}}" alt="itemImg" style="width:100%;">
             <div class="product-title">{{item.productName}}</div>
             <div class="product-price">LKR {{item.price}}/-</div>
-            <select class="quantity-select">
-                <option value="1">Qty - 1</option>
-                <option value="2">Qty - 2</option>
-                <option value="3">Qty - 3</option>
-                <option value="4">Qty - 4</option>
-                <option value="5">Qty - 5</option>
+            <select class="quantity-select" id="quantitySelect" #quantityDropdown>
+                <option *ngFor="let qty of [1, 2, 3, 4, 5, 6, 7]" [value]="qty" [selected]="qty === 1">
+                    {{qty}}
+                </option>
             </select>
-            <button class="add-to-cart-btn">Add to Cart</button>
+            <button class="add-to-cart-btn" (click)="addToCart(item, parseInt(quantityDropdown.value))">Add to
+                Cart</button>
         </div>
 
     </div>
@@ -105,21 +181,21 @@
     <div class="Category">
         <h1 class="CatTitle"
             style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; color: #b4443c; margin-top: 40px;">
-            <b>Others</b></h1>
+            <b>Others</b>
+        </h1>
     </div>
     <div class="container">
         <div class="item-card" *ngFor="let item of otherlist">
             <img src="{{item.product_picture}}" alt="itemImg" style="width:100%;">
             <div class="product-title">{{item.productName}}</div>
             <div class="product-price">LKR {{item.price}}/-</div>
-            <select class="quantity-select">
-                <option value="1">Qty - 1</option>
-                <option value="2">Qty - 2</option>
-                <option value="3">Qty - 3</option>
-                <option value="4">Qty - 4</option>
-                <option value="5">Qty - 5</option>
+            <select class="quantity-select" id="quantitySelect" #quantityDropdown>
+                <option *ngFor="let qty of [1, 2, 3, 4, 5, 6, 7]" [value]="qty" [selected]="qty === 1">
+                    {{qty}}
+                </option>
             </select>
-            <button class="add-to-cart-btn">Add to Cart</button>
+            <button class="add-to-cart-btn" (click)="addToCart(item, parseInt(quantityDropdown.value))">Add to
+                Cart</button>
         </div>
 
     </div>

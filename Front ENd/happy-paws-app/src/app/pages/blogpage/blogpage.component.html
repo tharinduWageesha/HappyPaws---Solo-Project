@@ -1,157 +1,252 @@
-<img src="iHD-Blog-Banner (1).webp" style="margin-bottom: 30px; max-width: 100%;">
+<img src="iHD-Blog-Banner (1).webp" style="margin-bottom: 30px; max-width: 100%; ">
 <div class="content-section">
     <!-- Health Section -->
-    <div class="section">
+    <div class="art-section">
         <h2 class="section-title">Health</h2>
         <div class="container">
-            <div class="card" style="width: 18rem;">
-                <img src="furry.jpeg" class="card-img-top" alt="...">
+            <div class="card" style="width: 18rem;" *ngFor="let blog of healthlist" data-bs-toggle="modal"
+                [attr.data-bs-target]="'#modal' + blog.id">
+                <img src="{{blog.img}}" class="card-img-top" alt="..." style="height: 200px;">
                 <div class="card-body">
-                    <p class="product-title">Tips for safe and enjoyable travels with your furry friend.</p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="feeed.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">Ideas for outdoor activities to keep your pet active and engaged.</p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="signs.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">Design ideas that are stylish and practical for pet owners.</p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="exer.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">How to Keep Your Pet Active and Healthy: Fun Exercise Ideas</p>
+                    <p class="product-title"
+                        style="font-size: 20px; color: rgba(102, 61, 0, 0.664); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        {{blog.title}}
+                    </p>
+                    <!-- Modal -->
+                    <div class="modal fade" [id]="'modal' + blog.id" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" [attr.aria-labelledby]="'modalLabel' + blog.id" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" [id]="'modalLabel' + blog.id">{{blog.title}}</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Article Image -->
+                                    <img src="{{blog.img}}" alt="Article Image" class="img-fluid mb-3">
+                                    <!-- Article Body -->
+                                    <div class="article-body">
+                                        <p>{{blog.body}}</p>
+                                    </div>
+                                    <!-- Author Information -->
+                                    <div class="author-info mt-3">
+                                        <p><strong>Author:</strong> {{blog.author}}</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 
+
+
+
     <!-- Training Section -->
-    <div class="section">
+    <div class="shop-section">
         <h2 class="section-title">Training</h2>
         <div class="container">
-            <div class="card" style="width: 18rem;">
-                <img src="furry.jpeg" class="card-img-top" alt="...">
+            <div class="card" style="width: 18rem;" *ngFor="let blog of trainlist" data-bs-toggle="modal">
+                <img src="{{blog.img}}" class="card-img-top" alt="..." style="height: 200px;">
                 <div class="card-body">
-                    <p class="product-title">Tips for safe and enjoyable travels with your furry friend.</p>
+                    <p class="product-title"
+                        style="font-size: 20px;  color: rgba(102, 61, 0, 0.664); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        {{blog.title}}</p>
                 </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="feeed.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">Ideas for outdoor activities to keep your pet active and engaged.</p>
+
+                <!-- Modal -->
+                <div class="modal fade" id="{{blog.id}}" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="modalArticleLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalArticleLabel{{blog.id}}">{{blog.title}}</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Article Image -->
+                                <img src="{{blog.img}}" alt="Article Image" class="img-fluid mb-3">
+
+                                <!-- Article Body -->
+                                <div class="article-body">
+                                    <p>
+                                        {{blog.body}}
+                                    </p>
+                                </div>
+
+                                <!-- Author Information -->
+                                <div class="author-info mt-3">
+                                    <p><strong>Author:</strong> {{blog.author}}</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-            <div class="card" style="width: 18rem;">
-                <img src="signs.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">Design ideas that are stylish and practical for pet owners.</p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="exer.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">How to Keep Your Pet Active and Healthy: Fun Exercise Ideas</p>
-                </div>
-            </div>
+
         </div>
     </div>
 
     <!-- Nutrition Section -->
-    <div class="section">
+    <div class="art-section">
         <h2 class="section-title">Nutrition</h2>
         <div class="container">
-            <div class="card" style="width: 18rem;">
-                <img src="furry.jpeg" class="card-img-top" alt="...">
+            <div class="card" style="width: 18rem;" *ngFor="let blog of nutrilist" data-bs-toggle="modal">
+                <img src="{{blog.img}}" class="card-img-top" alt="..." style="height: 200px;">
                 <div class="card-body">
-                    <p class="product-title">Tips for safe and enjoyable travels with your furry friend.</p>
+                    <p class="product-title"
+                        style="font-size: 20px;  color: rgba(102, 61, 0, 0.664); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        {{blog.title}}</p>
                 </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="feeed.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">Ideas for outdoor activities to keep your pet active and engaged.</p>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modalArticle{{blog.id}}" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="modalArticleLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalArticleLabel{{blog.id}}">{{blog.title}}</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Article Image -->
+                                <img src="{{blog.img}}" alt="Article Image" class="img-fluid mb-3">
+
+                                <!-- Article Body -->
+                                <div class="article-body">
+                                    <p>
+                                        {{blog.body}}
+                                    </p>
+                                </div>
+
+                                <!-- Author Information -->
+                                <div class="author-info mt-3">
+                                    <p><strong>Author:</strong> {{blog.author}}</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-            <div class="card" style="width: 18rem;">
-                <img src="signs.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">Design ideas that are stylish and practical for pet owners.</p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="exer.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">How to Keep Your Pet Active and Healthy: Fun Exercise Ideas</p>
-                </div>
-            </div>
+
         </div>
     </div>
 
     <!-- Grooming Section -->
-    <div class="section">
+    <div class="shop-section">
         <h2 class="section-title">Grooming</h2>
         <div class="container">
-            <div class="card" style="width: 18rem;">
-                <img src="furry.jpeg" class="card-img-top" alt="...">
+            <div class="card" style="width: 18rem;" *ngFor="let blog of groominglist" data-bs-toggle="modal">
+                <img src="{{blog.img}}" class="card-img-top" alt="..." style="height: 200px;">
                 <div class="card-body">
-                    <p class="product-title">Tips for safe and enjoyable travels with your furry friend.</p>
+                    <p class="product-title"
+                        style="font-size: 20px;  color: rgba(102, 61, 0, 0.664); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        {{blog.title}}</p>
                 </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="feeed.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">Ideas for outdoor activities to keep your pet active and engaged.</p>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modalArticle{{blog.id}}" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="modalArticleLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalArticleLabel{{blog.id}}">{{blog.title}}</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Article Image -->
+                                <img src="{{blog.img}}" alt="Article Image" class="img-fluid mb-3">
+
+                                <!-- Article Body -->
+                                <div class="article-body">
+                                    <p>
+                                        {{blog.body}}
+                                    </p>
+                                </div>
+
+                                <!-- Author Information -->
+                                <div class="author-info mt-3">
+                                    <p><strong>Author:</strong> {{blog.author}}</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-            <div class="card" style="width: 18rem;">
-                <img src="signs.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">Design ideas that are stylish and practical for pet owners.</p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="exer.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">How to Keep Your Pet Active and Healthy: Fun Exercise Ideas</p>
-                </div>
-            </div>
+
         </div>
     </div>
 
     <!-- Life Style Section -->
-    <div class="section">
+    <div class="art-section">
         <h2 class="section-title">Life Style</h2>
         <div class="container">
-            <div class="card" style="width: 18rem;">
-                <img src="furry.jpeg" class="card-img-top" alt="...">
+            <div class="card" style="width: 18rem;" *ngFor="let blog of lifelist" data-bs-toggle="modal">
+                <img src="{{blog.img}}" class="card-img-top" alt="..." style="height: 200px;">
                 <div class="card-body">
-                    <p class="product-title">Tips for safe and enjoyable travels with your furry friend.</p>
+                    <p class="product-title"
+                        style="font-size: 20px;  color: rgba(102, 61, 0, 0.664); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        {{blog.title}}</p>
                 </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="feeed.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">Ideas for outdoor activities to keep your pet active and engaged.</p>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modalArticle{{blog.id}}" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="modalArticleLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalArticleLabel{{blog.id}}">{{blog.title}}</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Article Image -->
+                                <img src="{{blog.img}}" alt="Article Image" class="img-fluid mb-3">
+
+                                <!-- Article Body -->
+                                <div class="article-body">
+                                    <p>
+                                        {{blog.body}}
+                                    </p>
+                                </div>
+
+                                <!-- Author Information -->
+                                <div class="author-info mt-3">
+                                    <p><strong>Author:</strong> {{blog.author}}</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-            <div class="card" style="width: 18rem;">
-                <img src="signs.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">Design ideas that are stylish and practical for pet owners.</p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="exer.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="product-title">How to Keep Your Pet Active and Healthy: Fun Exercise Ideas</p>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>

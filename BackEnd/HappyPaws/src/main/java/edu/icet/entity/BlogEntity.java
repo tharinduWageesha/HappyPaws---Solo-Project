@@ -1,5 +1,6 @@
-package edu.icet.dto;
+package edu.icet.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Blog {
+@Entity
+@Table(name = "Blog")
+public class BlogEntity {
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private Integer blogID;
    private String title;
    private String author;
    private String body;

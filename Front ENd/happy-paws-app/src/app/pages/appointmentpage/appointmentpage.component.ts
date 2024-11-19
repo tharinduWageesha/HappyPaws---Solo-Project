@@ -19,7 +19,7 @@ export class AppointmentpageComponent {
     "veterinarian": "",
     "date": "",
     "time": "",
-    "owner_name": "Nisal Themiya"
+    "email": localStorage.getItem('email')
   };
 
   constructor(private http: HttpClient) {
@@ -43,23 +43,32 @@ export class AppointmentpageComponent {
   loadAppointments() {
     this.pastAppointments = []; 
     this.upcomingAppointments = [];
-    
+
     this.http.get<any[]>('http://localhost:8080/appointment/get-all').subscribe(
       (response) => {
         const today = new Date();
         
         if (!response || response.length === 0) {
-          this.appointmentsList = [{ type: 'empty', veterinarian: 'empty', date: 'empty', time: 'empty' }];
+          // If no appointments, add a default empty object
+          this.pastAppointments = [{ type: 'empty', veterinarian: 'empty', date: 'empty', time: 'empty' }];
+          this.upcomingAppointments = [{ type: 'empty', veterinarian: 'empty', date: 'empty', time: 'empty' }];
         } else {
           response.forEach(appointment => {
-            const appointmentDate = new Date(appointment.date);
+            if (appointment.email === this.appointment.email) {
+              const appointmentDate = new Date(appointment.date);
 
-            if (appointmentDate < today) {
-              this.pastAppointments.push(appointment);
-            } else {
-              this.upcomingAppointments.push(appointment);
+              if (appointmentDate < today) {
+                this.pastAppointments.push(appointment);
+              } else {
+                this.upcomingAppointments.push(appointment);
+              }
             }
           });
+
+          if (this.pastAppointments.length === 0 && this.upcomingAppointments.length === 0) {
+            this.pastAppointments = [{ type: 'empty', veterinarian: 'empty', date: 'empty', time: 'empty' }];
+            this.upcomingAppointments = [{ type: 'empty', veterinarian: 'empty', date: 'empty', time: 'empty' }];
+          }
         }
 
         console.log("Past Appointments:", this.pastAppointments);
@@ -72,5 +81,6 @@ export class AppointmentpageComponent {
       }
     );
 }
+
 
 }

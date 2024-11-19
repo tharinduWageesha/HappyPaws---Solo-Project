@@ -1,21 +1,21 @@
 <div class="profile-container">
     <div class="profile-image">
-        <img src="bruno.jpeg" alt="Bruno's Profile Picture">
+        <img src="{{userData.petPicture}}" alt="Bruno's Profile Picture">
     </div>
     <div class="profile-info">
-        <h1>Here {{Pet.name}}'s Profile</h1>
+        <h1>Here {{userData.petName}}'s Profile</h1>
         <form>
             <label>Birth Day</label>
-            <input type="text" placeholder="Value" [disabled]="true" [value]="Pet.birthday">
+            <input type="text" placeholder="Value" [disabled]="true" [value]="userData.birthday">
 
             <label>Breed</label>
-            <input type="text" placeholder="Value" [disabled]="true" [value]="Pet.breed">
+            <input type="text" placeholder="Value" [disabled]="true" [value]="userData.breed">
 
             <label>Gender</label>
-            <input type="text" placeholder="Value" [disabled]="true" [value]="Pet.gender">
+            <input type="text" placeholder="Value" [disabled]="true" [value]="userData.gender">
 
             <label>Owner</label>
-            <input type="text" placeholder="Value" [value]="Pet.owner" [disabled]="true">
+            <input type="text" placeholder="Value" [value]="userData.name" [disabled]="true">
 
         </form>
     </div>
@@ -26,28 +26,26 @@
 <div class="appointments-container">
     <!-- Upcoming Appointments -->
     <div class="appointment-card">
-        <h1>Upcoming Appointment</h1>
+        <h1>Next Appointment</h1>
         <form>
             <div class="form-group">
                 <label>Date</label>
-                <input type="text" placeholder="Value" set>
-            </div>
-            <div class="form-group">
+                <input type="text" [value]="nextUpcomingAppointment?.date" disabled>
+              </div>
+              <div class="form-group">
                 <label>Vet’s Name</label>
-                <input type="text" placeholder="Value">
-            </div>
-            <div class="form-group">
+                <input type="text" [value]="nextUpcomingAppointment?.veterinarian" disabled>
+              </div>
+              <div class="form-group">
                 <label>Time</label>
-                <input type="text" placeholder="Value">
-            </div>
-            <div class="form-group">
+                <input type="text" [value]="nextUpcomingAppointment?.time" disabled>
+              </div>
+              <div class="form-group">
                 <label>Type</label>
-                <input type="text" placeholder="Value">
-            </div>
-            <div class="buttons">
-                <button type="submit" class="reschedule-button">Reschedule</button>
-                <button type="button" class="delete-button">Delete</button>
-            </div>
+                <input type="text" [value]="nextUpcomingAppointment?.type" disabled>
+              </div>
+              
+              
         </form>
     </div>
 
@@ -57,24 +55,21 @@
         <form>
             <div class="form-group">
                 <label>Date</label>
-                <input type="text" placeholder="Value">
+                <input type="text" [value]="lastPastAppointment?.date" disabled="">
             </div>
             <div class="form-group">
                 <label>Vet’s Name</label>
-                <input type="text" placeholder="Value">
+                <input type="text" [value]="lastPastAppointment?.veterinarian" disabled="">
             </div>
             <div class="form-group">
                 <label>Time</label>
-                <input type="text" placeholder="Value">
+                <input type="text" [value]="lastPastAppointment?.time" disabled="">
             </div>
             <div class="form-group">
                 <label>Type</label>
-                <input type="text" placeholder="Value">
+                <input type="text" [value]="lastPastAppointment?.type" disabled="">
             </div>
-            <div class="buttons">
-                <button type="submit" class="reschedule-button">Reschedule</button>
-                <button type="button" class="delete-button">Delete</button>
-            </div>
+            
         </form>
     </div>
 </div>
@@ -89,30 +84,17 @@
 
         <table>
             <tr>
-                <th>Type</th>
-                <th>Date</th>
-                <th>Veterinary</th>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>Alergies</th>
+                
             </tr>
             <tr>
-                <td>Parvo Vaccination</td>
-                <td>2024.12.06</td>
-                <td>Dr Prathiba Thilakarathna</td>
+                <td>{{userData.weight}} kg</td>
+                <td>{{userData.height}} cm</td>
+                <td>{{userData.alergies}}</td>
             </tr>
-            <tr>
-                <td>Parvo Vaccination</td>
-                <td>2024.12.06</td>
-                <td>Dr Prathiba Thilakarathna</td>
-            </tr>
-            <tr>
-                <td>Parvo Vaccination</td>
-                <td>2024.12.06</td>
-                <td>Dr Prathiba Thilakarathna</td>
-            </tr>
-            <tr>
-                <td>Parvo Vaccination</td>
-                <td>2024.12.06</td>
-                <td>Dr Prathiba Thilakarathna</td>
-            </tr>
+        
         </table>
 
     </section>
@@ -127,29 +109,34 @@
 
         <table>
             <tr>
-                <th>Type</th>
+                <th>Vaccines Used</th>
                 <th>Date</th>
                 <th>Veterinary</th>
             </tr>
             <tr>
-                <td>Parvo Vaccination</td>
-                <td>2024.12.06</td>
+                <td>D.H.L Vaccination</td>
+                <td>2024.11.16</td>
                 <td>Dr Prathiba Thilakarathna</td>
             </tr>
             <tr>
-                <td>Parvo Vaccination</td>
-                <td>2024.12.06</td>
-                <td>Dr Prathiba Thilakarathna</td>
+                <td>Anti Rabies Vaccination</td>
+                <td>2024.10.09</td>
+                <td>Dr Imandi Abeysinghe</td>
             </tr>
             <tr>
                 <td>Parvo Vaccination</td>
-                <td>2024.12.06</td>
+                <td>2024.02.16</td>
                 <td>Dr Prathiba Thilakarathna</td>
             </tr>
             <tr>
-                <td>Parvo Vaccination</td>
-                <td>2024.12.06</td>
-                <td>Dr Prathiba Thilakarathna</td>
+                <td>Canine parainfluenza Vaccination</td>
+                <td>2023.12.06</td>
+                <td>Dr Eranga Dissanayake</td>
+            </tr>
+            <tr>
+                <td>Canine distemper Vaccination</td>
+                <td>2023.02.26</td>
+                <td>Dr Thusith Kalhara</td>
             </tr>
         </table>
 

@@ -6,11 +6,162 @@
             <label class="tagline">" Paws and Peace... "</label>
             <nav class="nav-links">
                 <a routerLink="homepage" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-                <a routerLink="yourpet" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Your Pet</a>
-                 <a routerLink="appointments" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Appointments</a>
+                <a *ngIf="tempUser.logstatus === 'logged in'; else loginAlert1" routerLink="yourpet"
+                    routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    Your Pet
+                </a>
+                <ng-template #loginAlert1>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Your Pet</a>
+                </ng-template>
+
+                <a *ngIf="tempUser.logstatus === 'logged in'; else loginAlert2" routerLink="appointments"
+                    routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    Appointments
+                </a>
+                <ng-template #loginAlert2>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Appointments</a>
+                </ng-template>
+
                 <a routerLink="shop" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Shop</a>
                 <a routerLink="blog" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Blog</a>
-                <a routerLink="" id="logBtn">Log Out</a>
+                <a *ngIf="tempUser.keyinbtnlogin === 'Log Out'; else openModal" href="#" id="logBtn"
+                    (click)="logout($event)">
+                    {{ tempUser.keyinbtnlogin }}
+                </a>
+
+                <ng-template #openModal>
+                    <a href="#" id="logBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        {{ tempUser.keyinbtnlogin }}
+                    </a>
+                </ng-template>
+
+
+
+                <!-- Modal for Login -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="container">
+                                <!-- Login Form -->
+                                <div class="form-container" *ngIf="isLoginFormVisible" id="loginForm">
+                                    <h2>Login</h2>
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="username">Email</label>
+                                            <input type="email" id="username" name="email"
+                                                placeholder="Enter your Email" required [(ngModel)]="tempUser.email"
+                                                aria-label="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" id="password" name="password"
+                                                placeholder="Enter password" required [(ngModel)]="tempUser.password"
+                                                aria-label="Password">
+                                        </div>
+
+                                        <button type="submit" class="btn" (click)="loadUserDetails()">Login</button>
+                                        <button type="button" class="btn"
+                                            style="margin-top: 5px; background-color: rgb(255, 255, 240); color: black; border: 1px solid black;"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                        <p *ngIf="tempUser.errmsg" style="color: red; margin-top: 15px;"
+                                            id="loginError">{{ tempUser.errmsg }}</p>
+
+                                        <p class="switch-form">Don't have an account? <a (click)="toggleForms()">Sign
+                                                up</a></p>
+                                    </form>
+                                </div>
+
+                                <!-- Signup Form -->
+                                <div class="form-container" *ngIf="isSignupFormVisible" id="signupForm">
+                                    <h2>Sign Up</h2>
+                                    <form>
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" id="email" placeholder="Enter your email"
+                                                    [(ngModel)]="newuser.email" name="email" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ownerName">Your Name</label>
+                                                <input type="text" id="ownerName" placeholder="Enter your name"
+                                                    [(ngModel)]="newuser.name" name="owner_name" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input type="password" id="password" placeholder="Create a password"
+                                                    [(ngModel)]="newuser.password" name="password" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="address">Address</label>
+                                                <input type="text" id="address" placeholder="Enter your address"
+                                                    [(ngModel)]="newuser.address" name="address" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="petName">Pet Name</label>
+                                                <input type="text" id="petName" placeholder="Enter your pet's name"
+                                                    [(ngModel)]="newuser.petName" name="petname" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="breed">Breed</label>
+                                                <input type="text" id="breed" placeholder="Enter pet's breed"
+                                                    [(ngModel)]="newuser.breed" name="breed">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="birthday">Breed</label>
+                                                <input type="date" id="birthday" placeholder="Enter pet's birthday"
+                                                    [(ngModel)]="newuser.birthday" name="birthday">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="weight">Weight (kg)</label>
+                                                <input type="number" id="weight" placeholder="Enter pet's weight"
+                                                    [(ngModel)]="newuser.weight" name="weight">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="height">Height (cm)</label>
+                                                <input type="number" id="height" placeholder="Enter pet's height"
+                                                    [(ngModel)]="newuser.height" name="height">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="alergies">Allergies</label>
+                                                <input type="text" id="alergies" placeholder="Optional"
+                                                    [(ngModel)]="newuser.alergies" name="alergies">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="petPicture">Pet Picture</label>
+                                                <input type="url" id="pet_picture"
+                                                    placeholder="Enter your pet picture URL"
+                                                    [(ngModel)]="newuser.pet_picture" name="pet_picture">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="gender">Pet's Gender</label>
+                                                <select class="form-control" id="gender" name="gender" value="Select Gender"
+                                                    [(ngModel)]="newuser.gender">
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </div>
+                                            <p *ngIf="tempUser.errmsg" style="color: red; margin-top: 15px;"
+                                                id="loginError">{{ tempUser.errmsg }}</p>
+                                            <p *ngIf="newuser.donemsg" style="color: rgb(4, 113, 0); margin-top: 15px;"
+                                                id="loginError">{{ newuser.donemsg }}</p>
+                                            <button type="submit" class="btn" (click)="addUser()">Sign Up</button>
+                                        </form>
+                                        <button type="button" class="btn"
+                                            style="margin-top: 5px; background-color: rgb(255, 255, 240); color: black; border: 1px solid black;"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                        <p class="switch-form">Already have an account? <a
+                                                (click)="toggleForms()">Login</a></p>
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </nav>
         </header>
     </div>

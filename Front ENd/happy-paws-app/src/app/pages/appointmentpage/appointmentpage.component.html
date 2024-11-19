@@ -26,13 +26,13 @@
             </div>
         </div>
 
-        <div class="appointment-card add-new-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <div class="appointment-card add-new-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
             <span class="add-icon">+</span>
             <p class="add-text">Add New</p>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel2" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -84,8 +84,8 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="appointmentOwner" class="form-label">Your Name</label>
-                                <textarea class="form-control" id="appointmentUser" rows="1" [(ngModel)]="appointment.type"></textarea>
+                                <label for="appointmentOwner" class="form-label">Your email</label>
+                                <textarea class="form-control" id="appointmentUser" rows="1" [value]="appointment.email" disabled=""></textarea>
                             </div>
                             
                         </form>
@@ -97,7 +97,7 @@
                 </div>
             </div>
         </div>
-
+            
     </div>
 </div>
 
